@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .roast-container {
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        #roast-button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #3498db;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+    <title>Roast Me</title>
+</head>
+<body>
+    <div class="roast-container">
+        <p id="roast-text">Press the button to get roasted!</p>
+        <button id="roast-button">Roast Me</button>
+    </div>
+    <script>
+        const roastText = document.getElementById('roast-text');
+        const roastButton = document.getElementById('roast-button');
+
+        const roasts = [
+            "I'd give you a nasty look, but it seems like you've already got one.",
+            "Your birth certificate should be rewritten as a letter of apology.",
+            "You have a face that makes onions cry.",
+            "You are even more useless than the 'ueue' in queue.",
+            "The real heroes in this world are the ones who have to live with you.",
+            "Somewhere out there a tree is producing oxygen for you. What a shame.",
+            "Everyone is allowed to act stupid once in a while, but you're really abusing the privilege.",
+            "Don't be ashamed of who you are. That's a job for your parents.",
+            "You bring everyone so much joy… when you leave the room.",
+            "You're like a gray sprinkle on a rainbow cupcake.",
+            "You are more disappointing than an unsalted pretzel.",
+            "Rolling your eyes isn't going to help you find your brain.",
+            "Your charm is like Wi-Fi on a mountain: limited and hard to find.",
+            "Please press the button again as I’m trying to think of an insult that’s dumb enough for you to understand!",
+            "You’re so irritating you should come with a warning label just like this website."
+        ];
+
+        let isFirstClick = true;
+
+        roastButton.addEventListener('click', () => {
+            if (isFirstClick) {
+                alert("Warning! Remember, nothing here is meant to be taken seriously. You're perfect the way you are. Keep that in mind as you explore.");
+                isFirstClick = false;
+            }
+
+            const randomRoast = roasts[Math.floor(Math.random() * roasts.length)];
+            roastText.textContent = randomRoast;
+        });
+    </script>
+</body>
+</html>
